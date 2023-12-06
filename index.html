@@ -24,17 +24,11 @@
 
     <script>
         $(document).ready(function() {
-            // Check if the device is an Android device
             if (/Android/i.test(navigator.userAgent)) {
-                // Show the Android content div
                 $('#androidContent').show();
-            }
-            // Check if the device is an iPhone or iPod
-            else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                // Show the iPhone content div
+            } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                 $('#iphoneContent').show();
             } else {
-                // Show the other device content div
                 $('#otherContent').show();
             }
         });

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sama</title>
+    <title>Device Type Detection</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
@@ -32,17 +32,26 @@
 
     <script>
         $(document).ready(function() {
-            if (/Android/i.test(navigator.userAgent)) {
-                if (/Huawei/i.test(navigator.userAgent)) {
-                    $('#huaweiContent').show();
-                } else {
-                    $('#androidContent').show();
-                }
-            } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            const userAgent = navigator.userAgent.toLowerCase();
+
+            // Check if the device is a Huawei device
+            if (userAgent.includes('huawei')) {
+                $('#huaweiContent').show();
+            }
+            // Check if the device is an Android device
+            else if (userAgent.includes('android')) {
+                $('#androidContent').show();
+            }
+            // Check if the device is an iPhone or iPod
+            else if (userAgent.includes('iphone') || userAgent.includes('ipod')) {
                 $('#iphoneContent').show();
-            } else if (/BlackBerry/i.test(navigator.userAgent)) {
+            }
+            // Check if the device is a BlackBerry
+            else if (userAgent.includes('blackberry')) {
                 $('#blackberryContent').show();
-            } else {
+            }
+            // If none of the above, show other device content
+            else {
                 $('#otherContent').show();
             }
         });

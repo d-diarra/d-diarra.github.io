@@ -18,6 +18,14 @@
         <h1>IOS</h1>
     </div>
 
+    <div id="huaweiContent" style="display: none;">
+        <h1>HUAWEI</h1>
+    </div>
+
+    <div id="blackberryContent" style="display: none;">
+        <h1>BLACKBERRY</h1>
+    </div>
+
     <div id="otherContent" style="display: none;">
         <h1>AUTRE</h1>
     </div>
@@ -25,9 +33,15 @@
     <script>
         $(document).ready(function() {
             if (/Android/i.test(navigator.userAgent)) {
-                $('#androidContent').show();
+                if (/Huawei/i.test(navigator.userAgent)) {
+                    $('#huaweiContent').show();
+                } else {
+                    $('#androidContent').show();
+                }
             } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                 $('#iphoneContent').show();
+            } else if (/BlackBerry/i.test(navigator.userAgent)) {
+                $('#blackberryContent').show();
             } else {
                 $('#otherContent').show();
             }

@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Type Detection</title>
+    <title>Sama</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
+
 <body>
 
-<div id="androidContent" style="display: none;">
-    <h1>ANDROID</h1>
-</div>
+    <div id="androidContent" style="display: none;">
+        <h1>ANDROID</h1>
+    </div>
 
-<div id="iphoneContent" style="display: none;">
-    <h1>IOS</h1>
-</div>
+    <div id="iphoneContent" style="display: none;">
+        <h1>IOS</h1>
+    </div>
 
-<div id="otherContent" style="display: none;">
-    <h1>AUTRE</h1>
-</div>
+    <div id="otherContent" style="display: none;">
+        <h1>AUTRE</h1>
+    </div>
 
-<script>
-    $(document).ready(function () {
-        // Attach a click event to the document
-        $(document).on('click', function () {
+    <script>
+        $(document).ready(function() {
             // Check if the device is an Android device
             if (/Android/i.test(navigator.userAgent)) {
                 // Show the Android content div
@@ -38,8 +38,8 @@
                 $('#otherContent').show();
             }
         });
-    });
-</script>
+    </script>
 
 </body>
+
 </html>
